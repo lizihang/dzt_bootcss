@@ -6,7 +6,12 @@
 .button-variant(@color; @background; @border) {
   color: @color;
   background-color: @background;
+  background-image:linear-gradient(to bottom, lighten(@background,2%), @background);
   border-color: @border;
+  text-shadow:0 1px rgba(0, 0, 0, 0.1);
+  &:hover{
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
 
   &:hover,
   &:focus,
@@ -15,8 +20,9 @@
   &.active,
   .open > .dropdown-toggle& {
     color: @color;
-    background-color: darken(@background, 10%);
-        border-color: darken(@border, 12%);
+    background-color: darken(@background, 5%);
+        border-color: darken(@border, 7%);
+    background-image:linear-gradient(to bottom, @background, darken(@background,3%));
   }
   &:active,
   &.active,
