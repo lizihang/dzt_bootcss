@@ -49,6 +49,51 @@
   }
 }
 
+.button-default-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  background-image:linear-gradient(to bottom, #fff, @background);
+  border-color: @border;
+  text-shadow:0 1px 0 #fff;
+  &:hover{
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    color: @color;
+    background-color: darken(@background, 3%);
+        border-color: darken(@border, 5%);
+    background-image:linear-gradient(to bottom, #fefefe, darken(@background,2%));
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: @background;
+          border-color: @border;
+    }
+  }
+
+  .badge {
+    color: @background;
+    background-color: @color;
+  }
+}
 // Button sizes
 .button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
   padding: @padding-vertical @padding-horizontal;
